@@ -1,0 +1,18 @@
+#brand {
+    color : white
+}
+
+a {
+    color: white
+}
+
+a:hover {
+
+    color: black
+    
+}
+
+#dropdown {
+    background-color: grey;
+}
+

@@ -1,0 +1,9 @@
+package com.movie.backend;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.movie.backend.entity.User;
+
+public interface UserRepo extends JpaRepository<User, Long>{
+
+}

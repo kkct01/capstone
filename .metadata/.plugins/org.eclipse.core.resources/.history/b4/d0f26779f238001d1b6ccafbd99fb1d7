@@ -1,0 +1,27 @@
+package com.movie.backend.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.movie.backend.entity.User;
+import com.movie.backend.repository.UserRepo;
+
+@Service
+public class UserService {
+	
+	@Autowired
+	private UserRepo repo;
+	
+	public User addNewUser(User user) {
+		return repo.save(user);
+	}
+	
+	public User getUserByEmail(String email) {
+		return repo.findByEmail(email);
+	}
+	
+	public User getUserById(Integer id) {
+		return repo.findById(id).orElse(null);
+	}
+
+}

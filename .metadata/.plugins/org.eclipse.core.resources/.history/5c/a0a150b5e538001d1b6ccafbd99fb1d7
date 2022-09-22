@@ -1,0 +1,16 @@
+package com.movie.backend.generator;
+
+import java.util.Random;
+
+public class RandomNumberGenerator {
+	
+	int IdGen() {
+	
+	Random random = new Random();
+	
+	return random.nextInt();
+	}
+	
+	
+
+}

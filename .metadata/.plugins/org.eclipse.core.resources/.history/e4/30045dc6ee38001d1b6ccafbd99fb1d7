@@ -1,0 +1,22 @@
+package com.movie.backend.entity;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "movies")
+public class Movie {
+	
+	private Integer id;
+	private String title;
+	private Date opening;
+	private String duration;
+	private String language;
+	private String director;
+	private String cast;
+	private String synopsis;
+	private String posterLink;
+
+}

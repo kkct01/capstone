@@ -1,0 +1,82 @@
+<div class="container" id="body">
+    <div class="row">
+        <div class="col">
+            <div class="container" *ngIf="auth.isUserLoggedIn()">
+                <h3>Welcome {{username}}!</h3>
+            </div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img id="cimage" src="http://localhost:8089/images/20220915_Banner_Siya_la20220915.jpg"
+                            class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img id="cimage" src="http://localhost:8089/images/Marathi-films.jpg" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img id="cimage" src="http://localhost:8089/images/Agilan-Tamil-Movie.jpg"
+                            class="d-block w-100">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <table>
+                <tr>
+                    <td><button id="tb" class="btn btn-dark">English Movies</button></td>
+                    <td><button id="tb" class="btn btn-dark">Hindi Movies</button></td>
+                    <td><button id="tb" class="btn btn-dark">Chinese Movies</button></td>
+                </tr>
+
+            </table>
+
+        </div>
+        <div class="col">
+            <table>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tbody>
+                    <tr>
+                        <td id="tdp"><img id="thumb" src="http://localhost:8089/images/Agilan_1662034276.jpg"></td>
+                        <td id="tdp"><img id="thumb" src="http://localhost:8089/images/Siya_1662348291.jpg"></td>
+                        <td id="tdp"><img id="thumb" src="http://localhost:8089/images/timepass-3_1662631923.jpg"></td>
+                    </tr>
+                    <tr id="tr1">
+                        <td>Agilan</td>
+                        <td>Siya</td>
+                        <td>Timepass 3</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td id="tdp"><img id="thumb" src="http://localhost:8089/images/Warriors_of_Future.jpg"></td>
+                        <td id="tdp"><img id="thumb" src="http://localhost:8089/images/Barbarian-VerA-web-poster.jpg">
+                        </td>
+                        <td id="tdp"><img id="thumb" src="http://localhost:8089/images/The-Invitation-Web-Poster.jpg">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Warriors of Future</td>
+                        <td>Babarian</td>
+                        <td>The Invitation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
