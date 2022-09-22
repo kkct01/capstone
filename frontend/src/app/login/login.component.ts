@@ -30,8 +30,8 @@ export class LoginComponent implements OnInit {
       next: (res) => { 
         if(res != null)       
           this.userBackend = res, this.validation();
-        else
-          this.showAlert = true;      
+        else if(res == null)
+          this.showAlert = true; 
       },
       error: (err) => this.router.navigate(['**'])
     });
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
 
   validation() {
     if (this.authenticationService.authenticate(this.userBackend, this.inputPassword, this.inputEmail)) {
-      if(this.userBackend.id == 85710483)
+      if(this.userBackend.id == 52854266)
         this.router.navigate(['adminHome',this.userBackend.id]);
       else
         this.router.navigate(['home',this.userBackend.firstName]);

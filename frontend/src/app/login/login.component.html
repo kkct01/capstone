@@ -1,18 +1,20 @@
 <div class="container" id="body">
-    <div id="heading">
-        <h1>Login</h1>
-    </div>
+    
     <div class="container alert alert-danger col-md-3" role="alert" *ngIf="showAlert">
         Invalid username or password
     </div>
-    <form class="container col-md-3" (ngSubmit)="userLogin(inputEmail)">
+    <div class="container col-md-3">
+        <h2>Login</h2>
+    </div>
+
+    <form class="container col-md-3" ngNativeValidate (ngSubmit)="userLogin(inputEmail)">
         <div class="mb-3">
             <label for="email" class="form-label">Your Username (Email)</label>
-            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="inputEmail">
+            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="inputEmail" required>
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Your Password</label>
-            <input type="password" class="form-control" id="password" name="email" [(ngModel)]="inputPassword">
+            <input type="password" class="form-control" id="password" name="email" [(ngModel)]="inputPassword" required>
         </div>
         <button class="btn btn-primary">Login</button>
         <div id="lowest">

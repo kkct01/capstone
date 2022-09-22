@@ -1,6 +1,6 @@
 export class Movie {
 
-    id!:number;
+    id!:string;
     title!:string;
     opening!:Date;
     duration!:string;

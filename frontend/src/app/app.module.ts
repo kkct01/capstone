@@ -15,6 +15,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AdminMoviesComponent } from './admin-movies/admin-movies.component';
 import { AdminUserComponent } from './admin-user/admin-user.component';
+import { AdminAddMovieComponent } from './admin-add-movie/admin-add-movie.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AdminUserComponent } from './admin-user/admin-user.component';
     FooterComponent,
     LogoutComponent,
     AdminMoviesComponent,
-    AdminUserComponent
+    AdminUserComponent,
+    AdminAddMovieComponent
   ],
   imports: [
     BrowserModule,

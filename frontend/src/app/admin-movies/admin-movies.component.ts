@@ -13,17 +13,16 @@ export class AdminMoviesComponent implements OnInit {
 
   constructor(private movieService:MovieService, private activatedRoute:ActivatedRoute) { }
 
-  user:User = new User();
-
   movies: Movie[] = [];
 
+  id: string = '';
+
   ngOnInit(): void {
-    this.user.id = this.activatedRoute.snapshot.params['id'];
-    this.movieService.listAllMovies(this.user.id).subscribe({
+
+    this.id = this.activatedRoute.snapshot.params['id'];
+
+    this.movieService.listAllMovies(this.id).subscribe({
       next:(res) => this.movies = res
-    });
+    })
   }
-
-
-
 }

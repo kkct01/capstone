@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
@@ -15,8 +16,7 @@ import org.hibernate.annotations.GenericGenerator;
 public class Movie {
 	
 	@Id
-	@GenericGenerator(name = "myGenerator", strategy = "com.movie.backend.generator.RandomIdGenerator")
-	@GeneratedValue(generator = "myGenerator")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String title;
 	private Date opening;

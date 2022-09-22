@@ -11,14 +11,15 @@ export class MovieService {
 
   constructor(private http:HttpClient) { }
 
-  baseUrl = "http://localhost:4200";
 
-  listAllMovies(id:number):Observable<Movie[]> {
-    
-    return this.http.get<Movie[]>(`${this.baseUrl}/user/${id}/list-movies`);
+  baseUrl = "http://localhost:8089";
+
+  listAllMovies(id:string):Observable<Movie[]> {    
+    return this.http.get<Movie[]>(`${this.baseUrl}/admin/${id}/list-movies`);
   }
 
-  
-
+  addNewMovie(movie: Movie, id:string) {
+    return this.http.post<Movie>(`${this.baseUrl}/admin/${id}/add-movie`, movie);
+  }
 
 }

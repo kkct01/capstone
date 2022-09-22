@@ -1,23 +1,38 @@
 <div class="container">
-    <table class="table">
-        <thead>
-            <tr *ngFor="let movie of movies">
-                <th>{{movie.title}}</th>
-                <th></th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td scope="row"></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td scope="row"></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+    <div>
+        <button class="btn btn-primary" routerLink="/adminAddMovie/{{id}}">Add movie</button>
+    </div>
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Opening on</th>
+                    <th>Duration</th>
+                    <th>Language</th>
+                    <th>Director</th>
+                    <th>Cast</th>
+                    <th>Synopsis</th>
+                    <th>Poster Link</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let movie of movies">
+                    <td>{{movie.id}}</td>
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.opening}}</td>
+                    <td>{{movie.duration}}</td>
+                    <td>{{movie.language}}</td>
+                    <td>{{movie.director}}</td>
+                    <td>{{movie.cast}}</td>
+                    <td>{{movie.synopsis}}</td>
+                    <td>{{movie.posterLink}}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

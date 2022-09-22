@@ -1,3 +1,4 @@
+import { AdminAddMovieComponent } from './admin-add-movie/admin-add-movie.component';
 import { AdminUserComponent } from './admin-user/admin-user.component';
 import { AdminMoviesComponent } from './admin-movies/admin-movies.component';
 import { LogoutComponent } from './logout/logout.component';
@@ -17,8 +18,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'logout', component: LogoutComponent},
   { path: 'adminHome/:id', component: AdminHomeComponent, canActivate:[RouteGuardService]},
-  { path: 'adminMovies', component: AdminMoviesComponent, canActivate:[RouteGuardService]},
+  { path: 'adminMovies/:id', component: AdminMoviesComponent, canActivate:[RouteGuardService]},
   { path: 'adminUsers/:id', component: AdminUserComponent, canActivate:[RouteGuardService]},
+  { path: 'adminAddMovie/:id', component: AdminAddMovieComponent, canActivate:[RouteGuardService]},
   { path: '**', component: ErrorComponent}
 ];
 
