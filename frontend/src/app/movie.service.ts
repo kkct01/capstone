@@ -22,4 +22,16 @@ export class MovieService {
     return this.http.post<Movie>(`${this.baseUrl}/admin/${id}/add-movie`, movie);
   }
 
+  findMovie(uId: string, mId: string):Observable<Movie> {
+    return this.http.get<Movie>(`${this.baseUrl}/admin/${uId}/movie/${mId}`);
+  }
+
+  findMovieById(mId: string):Observable<Movie> {
+    return this.http.get<Movie>(`${this.baseUrl}/admin/0/movie/${mId}`);
+  }
+
+  updateMovie(uId: string, movie:Movie){
+    return this.http.put(`${this.baseUrl}/admin/${uId}/update-movie`,movie);
+  }
+
 }

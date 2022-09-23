@@ -1,10 +1,13 @@
 <div class="container">
     <div>
-        <button class="btn btn-primary" routerLink="/adminAddMovie/{{id}}">Add movie</button>
+        <h3 class="text-primary">Admin({{uid}})</h3>
+    </div>
+    <div>
+        <button class="btn btn-primary" routerLink="/adminAddMovie/{{uid}}">Add movie</button>
     </div>
 
     <div class="container">
-        <table class="table">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -16,21 +19,22 @@
                     <th>Cast</th>
                     <th>Synopsis</th>
                     <th>Poster Link</th>
-                    <th>Action</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let movie of movies">
                     <td>{{movie.id}}</td>
                     <td>{{movie.title}}</td>
-                    <td>{{movie.opening}}</td>
+                    <td>{{movie.opening | date:'shortDate'}}</td>
                     <td>{{movie.duration}}</td>
                     <td>{{movie.language}}</td>
                     <td>{{movie.director}}</td>
                     <td>{{movie.cast}}</td>
                     <td>{{movie.synopsis}}</td>
                     <td>{{movie.posterLink}}</td>
-                    <td></td>
+                    <td><button class="btn btn-primary" routerLink="/adminUpdateMovie/{{uid}}/movie/{{movie.id}}">Update</button><br>
+                    <button class="btn btn-danger">Remove</button></td>
                 </tr>
             </tbody>
         </table>

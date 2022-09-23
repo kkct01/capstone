@@ -1,3 +1,5 @@
+import { UserMovieComponent } from './user-movie/user-movie.component';
+import { UpdateMovieComponent } from './update-movie/update-movie.component';
 import { AdminAddMovieComponent } from './admin-add-movie/admin-add-movie.component';
 import { AdminUserComponent } from './admin-user/admin-user.component';
 import { AdminMoviesComponent } from './admin-movies/admin-movies.component';
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'adminMovies/:id', component: AdminMoviesComponent, canActivate:[RouteGuardService]},
   { path: 'adminUsers/:id', component: AdminUserComponent, canActivate:[RouteGuardService]},
   { path: 'adminAddMovie/:id', component: AdminAddMovieComponent, canActivate:[RouteGuardService]},
+  { path: 'adminUpdateMovie/:uid/movie/:mid', component: UpdateMovieComponent, canActivate:[RouteGuardService]},
+  { path: 'movie/:mId', component: UserMovieComponent},
   { path: '**', component: ErrorComponent}
 ];
 

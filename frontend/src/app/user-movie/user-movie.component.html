@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3>{{movie.title}}</h3>
+            <img src="{{posterBaseUrl}}/{{movie.posterLink}}">
+        </div>
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Language</th>
+                        <th>Duration</th>
+                        <th>Opening on</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{movie.language}}</td>
+                        <td>{{movie.duration}} minutes</td>
+                        <td>{{movie.opening}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br><br><br>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Director</th>
+                        <th>Cast</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{movie.director}}</td>
+                        <td>{{movie.cast}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br><br><br>
+            <div class="col">
+                <label for="story">
+                    <h4>Synopsis</h4>
+                </label>
+                <p id="story">{{movie.synopsis}}</p>
+                <button class="btn btn-primary">Add to cart</button>
+            </div>
+        </div>
+    </div>
+</div>

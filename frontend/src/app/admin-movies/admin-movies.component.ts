@@ -15,13 +15,13 @@ export class AdminMoviesComponent implements OnInit {
 
   movies: Movie[] = [];
 
-  id: string = '';
+  uid: string = '';
 
   ngOnInit(): void {
 
-    this.id = this.activatedRoute.snapshot.params['id'];
+    this.uid = this.activatedRoute.snapshot.params['id'];
 
-    this.movieService.listAllMovies(this.id).subscribe({
+    this.movieService.listAllMovies(this.uid).subscribe({
       next:(res) => this.movies = res
     })
   }

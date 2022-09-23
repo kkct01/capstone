@@ -1,0 +1,56 @@
+<div class="container">
+    <div>
+        <h3 class="text-primary">Admin({{uId}})</h3>
+    </div>
+    <div class="container col-md-3">
+        <h2>Update movie</h2>
+    </div>
+    <form class="container col-md-4" ngNativeValidate (ngSubmit)="updateMovie(uId,movie)">
+        <div class="mb-3 text-danger">
+            <span>Movie ID: {{movie.id}}</span>
+        </div>
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" value="{{movie.title}}" [(ngModel)]="movie.title" required>
+        </div>
+        <div class="mb-3">
+            <label for="opening" class="form-label">Opening on</label>
+            <input type="date" class="form-control" id="opening" name="opening" value="{{movie.opening}}" [(ngModel)]="movie.opening" required>
+        </div>
+        <div class="mb-3">
+            <label for="duration" class="form-label">Duration</label>
+            <input type="text" class="form-control" id="duration" name="duration" value="{{movie.duration}}" [(ngModel)]="movie.duration" required>
+        </div>
+        <div class="mb-3">
+            <label for="select" class="form-label">Language</label>
+            <select class="form-select" id="select" name="language" type="text" value="{{movie.language}}" [(ngModel)]="movie.language" required>
+                <option selected>Select a language</option>
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Chinese">Chinese</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="director" class="form-label">Director</label>
+            <input type="text" class="form-control" id="director" name="director" value="{{movie.director}}" [(ngModel)]="movie.director" required>
+        </div>
+        <div class="mb-3">
+            <label for="cast" class="form-label">Cast</label>
+            <input type="text" class="form-control" id="cast" name="cast" value="{{movie.cast}}" [(ngModel)]="movie.cast" required>
+        </div>
+        <div class="mb-3">
+            <label for="synopsis" class="form-label">Synopsis</label>
+            <textarea type="text" class="form-control" id="synopsis" name="synopsis" value="{{movie.synopsis}}" [(ngModel)]="movie.synopsis"
+                required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="posterLink" class="form-label">Poster Link</label>
+            <input type="text" class="form-control" id="posterLink" name="posterLink" value="{{movie.posterLink}}" [(ngModel)]="movie.posterLink"
+                required>
+        </div>
+        <div id="button">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
+</div>

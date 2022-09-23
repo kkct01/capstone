@@ -16,6 +16,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { AdminMoviesComponent } from './admin-movies/admin-movies.component';
 import { AdminUserComponent } from './admin-user/admin-user.component';
 import { AdminAddMovieComponent } from './admin-add-movie/admin-add-movie.component';
+import { UpdateMovieComponent } from './update-movie/update-movie.component';
+import { UserMovieComponent } from './user-movie/user-movie.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { AdminAddMovieComponent } from './admin-add-movie/admin-add-movie.compon
     LogoutComponent,
     AdminMoviesComponent,
     AdminUserComponent,
-    AdminAddMovieComponent
+    AdminAddMovieComponent,
+    UpdateMovieComponent,
+    UserMovieComponent
   ],
   imports: [
     BrowserModule,
