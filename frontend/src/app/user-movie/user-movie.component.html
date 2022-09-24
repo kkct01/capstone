@@ -1,4 +1,5 @@
 <div class="container">
+    {{user.email}}
     <div class="row">
         <div class="col">
             <h3>{{movie.title}}</h3>
@@ -27,12 +28,14 @@
                     <tr>
                         <th>Director</th>
                         <th>Cast</th>
+                        <th>Ticke price</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>{{movie.director}}</td>
                         <td>{{movie.cast}}</td>
+                        <td>{{movie.price}}</td>
                     </tr>
                 </tbody>
             </table>

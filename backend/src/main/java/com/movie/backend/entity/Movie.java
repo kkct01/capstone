@@ -27,15 +27,24 @@ public class Movie {
 	private String language;
 	private String director;
 	private String cast;
-	@Lob
+	private Integer price = 30;
+	@Lob	
 	private String synopsis;
 	private String posterLink;
 	
+	public Integer getPrice() {
+		return price;
+	}
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+		
 	public Movie() {
 		super();
 	}
+	
 	public Movie(Integer id, String title, Date opening, String duration, String language, String director, String cast,
-			String synopsis, String posterLink) {
+			Integer price, String synopsis, String posterLink) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -44,6 +53,7 @@ public class Movie {
 		this.language = language;
 		this.director = director;
 		this.cast = cast;
+		this.price = price;
 		this.synopsis = synopsis;
 		this.posterLink = posterLink;
 	}

@@ -9,7 +9,7 @@ export class AuthenticationService {
   constructor() { }
 
   authenticate(user: User, password: string, email: string) {
-    if(user.id == 56165647 && user.password == password) {
+    if(user.id == 32375274 && user.password == password) {
       sessionStorage.setItem('adminAuthenticator', user.lastName,);
       return true;
     }

@@ -1,5 +1,0 @@
-package com.movie.backend;
-
-public interface UserRepo {
-
-}

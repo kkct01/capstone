@@ -1,8 +1,0 @@
-server.port=8089
-spring.datasource.username=root
-spring.datasource.password=password
-
-spring.jpa.show-sql=true
-spring.jpa.generate-ddl=true
-spring.jpa.hibernate.ddl-auto=create
-spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect

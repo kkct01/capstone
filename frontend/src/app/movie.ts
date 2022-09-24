@@ -9,5 +9,6 @@ export class Movie {
     cast!:string;
     synopsis!:string;
     posterLink!:string;
+    price!:number;
 
 }

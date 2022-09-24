@@ -38,6 +38,12 @@ public class UserController {
 		return service.getAllUsersService(id);
 	}
 	
+	@GetMapping("/userId/{uId}")
+	public User getUserById(@PathVariable Integer uId) {
+		return service.getUserByIdService(uId);
+		
+	}
+	
 	
 
 }

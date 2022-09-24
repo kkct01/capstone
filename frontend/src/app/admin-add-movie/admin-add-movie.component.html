@@ -46,6 +46,10 @@
             <label for="posterLink" class="form-label">Poster Link</label>
             <input type="text" class="form-control" id="posterLink" name="posterLink" required [(ngModel)]="movie.posterLink">
         </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Ticket price</label>
+            <input type="number" class="form-control" id="price" name="price" required [(ngModel)]="movie.price">
+        </div>
         <div id="button">
             <button type="submit" class="btn btn-info">Submit</button>
         </div>
