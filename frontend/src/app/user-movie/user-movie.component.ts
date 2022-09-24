@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../authentication.service';
 import { MovieService } from './../movie.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
@@ -16,7 +17,7 @@ export class UserMovieComponent implements OnInit, AfterViewInit {
 
   posterBaseUrl = "http://localhost:8089/images/"
 
-  constructor(private activatedRoute: ActivatedRoute, private movieService: MovieService, private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute, private movieService: MovieService, private router: Router, public auth:AuthenticationService) { }
 
   ngOnInit(): void {
     this.mId = this.activatedRoute.snapshot.params['mId'];

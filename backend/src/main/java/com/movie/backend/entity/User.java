@@ -19,13 +19,13 @@ public class User {
 	private String lastName;
 	private String email;
 	private String password;
-	private Integer enable = 1;
+	private boolean enable = true;
 
 	public User() {
 		super();
 	}
 	
-	public User(Integer id, String firstName, String lastName, String email, String password, Integer enable) {
+	public User(Integer id, String firstName, String lastName, String email, String password, boolean enable) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -65,10 +65,10 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Integer getEnable() {
+	public boolean getEnable() {
 		return enable;
 	}
-	public void setEnable(Integer enable) {
+	public void setEnable(boolean enable) {
 		this.enable = enable;
 	}
 }

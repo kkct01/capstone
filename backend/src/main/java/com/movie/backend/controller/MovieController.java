@@ -39,6 +39,11 @@ public class MovieController {
 		return service.findAllMoviesService();
 	}
 	
+	@GetMapping("/all-movies")
+	public List<Movie> findAllMoviesHome() {
+		return service.findAllMoviesService();
+	}
+	
 	@GetMapping("/admin/{uid}/movie/{mid}")
 	public Movie findMovie(@PathVariable Integer uid, @PathVariable Integer mid) {
 		return service.findMovieService(mid);

@@ -41,39 +41,27 @@
 
         </div>
         <div class="col">
-            <table>
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
+            <table *ngIf="!(auth.isAdminLoggedIn()||auth.isUserLoggedIn())">
                 <tbody>
-                    <tr>
-                        <td id="tdp"><img id="thumb" src="http://localhost:8089/images/Agilan_1662034276.jpg"></td>
-                        <td id="tdp"><img id="thumb" src="http://localhost:8089/images/Siya_1662348291.jpg"></td>
-                        <td id="tdp"><img id="thumb" src="http://localhost:8089/images/timepass-3_1662631923.jpg"></td>
-                    </tr>
-                    <tr id="tr1">
-                        <td>Agilan</td>
-                        <td>Siya</td>
-                        <td>Timepass 3</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td id="tdp"><img id="thumb" src="http://localhost:8089/images/Warriors_of_Future.jpg"></td>
-                        <td id="tdp"><img id="thumb" src="http://localhost:8089/images/Barbarian-VerA-web-poster.jpg">
-                        </td>
-                        <td id="tdp"><img id="thumb" src="http://localhost:8089/images/The-Invitation-Web-Poster.jpg">
+                    <tr *ngFor="let movie of movies">
+                        <td>
+                            <a routerLink="/movie/{{movie.id}}">
+                                <img id="thumb" src="{{baseUrl}}/{{movie.posterLink}}">
+                                <p>{{movie.title}}</p>
+                            </a>                            
                         </td>
                     </tr>
-                    <tr>
-                        <td>Warriors of Future</td>
-                        <td>Babarian</td>
-                        <td>The Invitation</td>
+                </tbody>
+            </table>
+            <table *ngIf="auth.isAdminLoggedIn()||auth.isUserLoggedIn()">
+                <tbody>
+                    <tr *ngFor="let movie of movies">
+                        <td>
+                            <a routerLink="/movie/{{movie.id}}/user/{{username}}/{{uId}}">
+                                <img id="thumb" src="{{baseUrl}}/{{movie.posterLink}}">
+                                <p>{{movie.title}}</p>
+                            </a>                            
+                        </td>
                     </tr>
                 </tbody>
             </table>

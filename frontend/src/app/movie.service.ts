@@ -34,4 +34,8 @@ export class MovieService {
     return this.http.put(`${this.baseUrl}/admin/${uId}/update-movie`,movie);
   }
 
+  listAllMoviesHome():Observable<Movie[]> {
+    return this.http.get<Movie[]>(`${this.baseUrl}/all-movies`);
+  }
+
 }

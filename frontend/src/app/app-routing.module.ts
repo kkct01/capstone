@@ -15,7 +15,7 @@ import { RouteGuardService } from './route-guard.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'home/:firstName', component: HomeComponent},
+  { path: 'home/:firstName/:uId', component: HomeComponent},
   { path: 'registration', component: RegistrationComponent },
   { path: 'login', component: LoginComponent},
   { path: 'logout', component: LogoutComponent},
@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: 'adminUsers/:id', component: AdminUserComponent, canActivate:[RouteGuardService]},
   { path: 'adminAddMovie/:id', component: AdminAddMovieComponent, canActivate:[RouteGuardService]},
   { path: 'adminUpdateMovie/:uid/movie/:mid', component: UpdateMovieComponent, canActivate:[RouteGuardService]},
+  { path: 'movie/:mId/user/:firstName/:uId', component: UserMovieComponent},
   { path: 'movie/:mId', component: UserMovieComponent},
   { path: '**', component: ErrorComponent}
 ];
