@@ -22,9 +22,10 @@ public class CartItemController {
 	@Autowired
 	private CartItemService service;
 	
-	@GetMapping("/cart/user/{uId}")
-	public List<CartItem> listAllCartItems(@PathVariable Integer uId){
-		return service.findAllCartItems();
+	@PostMapping("/cart/add-item")
+	public ResponseEntity<CartItem> addItemToCart(@RequestBody CartItem cartItem){
+		service.addNewCartItem(cartItem);
+		return ResponseEntity.ok(cartItem);
 		
 	
 		

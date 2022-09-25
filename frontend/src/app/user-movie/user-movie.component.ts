@@ -21,29 +21,31 @@ export class UserMovieComponent implements OnInit{
   username: string = '';
   movie: Movie = new Movie();
   user: User = new User();
-  // cartItem: CartItem = new CartItem(this.user, this.movie);
+  cartItem: CartItem = new CartItem(this.user, this.movie);
 
-  posterBaseUrl = "http://localhost:8089/images/"
+  posterBaseUrl = "http://localhost:8089/images"
 
   constructor(private userService: UserService, private cartItemService: CartItemService, private activatedRoute: ActivatedRoute, private movieService: MovieService, private router: Router, public auth: AuthenticationService) { }
 
   ngOnInit(): void {
     this.mId = this.activatedRoute.snapshot.params['mId'];
     this.uId = this.activatedRoute.snapshot.params['uId'];
-    // this.username = this.activatedRoute.snapshot.params['firstName']
-    // this.movieService.findMovieById(this.mId).subscribe({
-    //   next: (res) => this.movie = res
-    // })
-    // this.userService.getOneUserById(this.uId).subscribe({
-    //   next:(res) => this.user = res
-    // })
+    this.movieService.findMovieById(this.mId).subscribe({
+      next: (res) => this.movie = res
+    })
+    this.userService.getOneUserById(this.uId).subscribe({
+      next:(res) => this.user = res
+    })
     // this.cartItem.user = this.user;
     // this.cartItem.movie = this.movie;
+   
   }
 
-  saveUIdMIdPair(uId:number,mId:number) {
-    this.cartItemService.saveCartItem(uId,mId).subscribe({
-      next:(res) => alert('Item saved')
+  saveItemToCart(cartItem:CartItem) {
+    this.cartItem.user = this.user;
+    this.cartItem.movie = this.movie;
+    this.cartItemService.saveCartItem(cartItem).subscribe({
+      next:(res) => alert('Item added to cart')
     })
   }
 
@@ -54,8 +56,11 @@ export class UserMovieComponent implements OnInit{
   //   });
   // }
 
+}
+
+
  
 
-}
+
 
 

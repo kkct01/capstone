@@ -9,11 +9,11 @@ import { User } from './user';
 })
 export class CartItemService {
 
-  baseUrl = 'http://localhost:8089/'
+  baseUrl = 'http://localhost:8089'
 
   constructor(private http:HttpClient) { }
 
-  saveCartItem(uId:number, mId:number) {
-    return this.http.post(`${this.baseUrl}/add-cartItem/${uId}/${mId}`, {uId, mId});
+  saveCartItem(cartItem: CartItem) {
+    return this.http.post(`${this.baseUrl}/cart/add-item`,cartItem);
   }
 }

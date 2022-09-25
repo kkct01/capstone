@@ -14,10 +14,6 @@ public class CartItemService {
 	@Autowired
 	private CartItemRepo repo;
 	
-	public List<CartItem> findAllCartItems() {
-		return repo.findAll();
-	}
-	
 	public CartItem addNewCartItem(CartItem cartItem) {
 		return repo.save(cartItem);
 		
