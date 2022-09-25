@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   movies: Movie[] = []
 
-  baseUrl = "http://localhost:8089/images/"
+  baseUrl = "http://localhost:8089/images"
 
   constructor(private activatedRoute: ActivatedRoute, public auth:AuthenticationService, private movieService:MovieService) { }
 

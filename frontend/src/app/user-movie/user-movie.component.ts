@@ -1,3 +1,4 @@
+import { InteractionService } from './../interaction.service';
 import { UserService } from './../user.service';
 import { Observable, subscribeOn } from 'rxjs';
 import { CartItemService } from './../cart-item.service';
@@ -14,7 +15,7 @@ import { User } from '../user';
   templateUrl: './user-movie.component.html',
   styleUrls: ['./user-movie.component.css']
 })
-export class UserMovieComponent implements OnInit{
+export class UserMovieComponent implements OnInit {
 
   mId: string = '';
   uId: string = '';
@@ -25,7 +26,7 @@ export class UserMovieComponent implements OnInit{
 
   posterBaseUrl = "http://localhost:8089/images"
 
-  constructor(private userService: UserService, private cartItemService: CartItemService, private activatedRoute: ActivatedRoute, private movieService: MovieService, private router: Router, public auth: AuthenticationService) { }
+  constructor(private _interactionService: InteractionService, private userService: UserService, private cartItemService: CartItemService, private activatedRoute: ActivatedRoute, private movieService: MovieService, private router: Router, public auth: AuthenticationService) { }
 
   ngOnInit(): void {
     this.mId = this.activatedRoute.snapshot.params['mId'];
@@ -34,32 +35,25 @@ export class UserMovieComponent implements OnInit{
       next: (res) => this.movie = res
     })
     this.userService.getOneUserById(this.uId).subscribe({
-      next:(res) => this.user = res
+      next: (res) => this.user = res
     })
-    // this.cartItem.user = this.user;
-    // this.cartItem.movie = this.movie;
-   
+    this._interactionService.sendUId(this.uId)
+
   }
 
-  saveItemToCart(cartItem:CartItem) {
+  saveItemToCart(cartItem: CartItem) {
     this.cartItem.user = this.user;
     this.cartItem.movie = this.movie;
     this.cartItemService.saveCartItem(cartItem).subscribe({
-      next:(res) => alert('Item added to cart')
+      next: (res) => alert('Item added to cart')
     })
-  }
 
-  // addCartItem(user:User, movie:Movie) {
-  //   this.cartItem = new CartItem(this.user, this.movie);
-  //   this.cartItemService.saveCartItem(this.cartItem).subscribe({
-  //     next:(res) => alert("Movie added to shopping cart")
-  //   });
-  // }
+  }
 
 }
 
 
- 
+
 
 
 

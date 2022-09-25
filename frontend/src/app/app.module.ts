@@ -1,3 +1,4 @@
+import { InteractionService } from './interaction.service';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -42,7 +43,9 @@ import { UserMovieComponent } from './user-movie/user-movie.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    InteractionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

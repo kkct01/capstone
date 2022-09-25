@@ -1,3 +1,4 @@
+import { CartComponent } from './cart/cart.component';
 import { UserMovieComponent } from './user-movie/user-movie.component';
 import { UpdateMovieComponent } from './update-movie/update-movie.component';
 import { AdminAddMovieComponent } from './admin-add-movie/admin-add-movie.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'adminUpdateMovie/:uid/movie/:mid', component: UpdateMovieComponent, canActivate:[RouteGuardService]},
   { path: 'movie/:mId/user/:firstName/:uId', component: UserMovieComponent},
   { path: 'movie/:mId', component: UserMovieComponent},
+  { path: 'cart/:uId', component: CartComponent},
   { path: '**', component: ErrorComponent}
 ];
 

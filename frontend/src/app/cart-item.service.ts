@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CartItem } from './cart-item';
@@ -15,5 +16,9 @@ export class CartItemService {
 
   saveCartItem(cartItem: CartItem) {
     return this.http.post(`${this.baseUrl}/cart/add-item`,cartItem);
+  }
+
+  getCartItemsByUser(user: User) {
+    return this.http.get<CartItem[]>(`${this.baseUrl}/cart/get-items`);
   }
 }

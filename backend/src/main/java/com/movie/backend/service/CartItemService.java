@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.movie.backend.entity.CartItem;
+import com.movie.backend.entity.User;
 import com.movie.backend.repository.CartItemRepo;
 
 @Service
@@ -15,8 +16,11 @@ public class CartItemService {
 	private CartItemRepo repo;
 	
 	public CartItem addNewCartItem(CartItem cartItem) {
-		return repo.save(cartItem);
-		
+		return repo.save(cartItem);	
+	}
+	
+	public List<CartItem> getCartItemsByUser(User user) {
+		return repo.getByUser(user);
 	}
 
 }
