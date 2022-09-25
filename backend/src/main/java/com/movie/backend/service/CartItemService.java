@@ -15,12 +15,17 @@ public class CartItemService {
 	@Autowired
 	private CartItemRepo repo;
 	
+	
+	
 	public CartItem addNewCartItem(CartItem cartItem) {
 		return repo.save(cartItem);	
 	}
 	
-	public List<CartItem> getCartItemsByUser(User user) {
+	public List<CartItem> getCartItemsByUId(Integer uId) {
+		User user = new User();
+		user.setId(uId);
 		return repo.getByUser(user);
+			
 	}
 
 }

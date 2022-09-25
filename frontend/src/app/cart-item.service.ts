@@ -18,7 +18,7 @@ export class CartItemService {
     return this.http.post(`${this.baseUrl}/cart/add-item`,cartItem);
   }
 
-  getCartItemsByUser(user: User) {
-    return this.http.get<CartItem[]>(`${this.baseUrl}/cart/get-items`);
+  getCartItemsByUserId(user:User) {
+    return this.http.get<CartItem[]>(`${this.baseUrl}/cart/user/${user.id}`);
   }
 }

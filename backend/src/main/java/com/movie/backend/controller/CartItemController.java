@@ -29,9 +29,9 @@ public class CartItemController {
 		return ResponseEntity.ok(cartItem);		
 	}
 	
-	@GetMapping("/cart/get-items")
-	public List<CartItem> getCartItemByUser(@RequestBody User user) {
-		return service.getCartItemsByUser(user);
+	@GetMapping("/cart/user/{uId}")
+	public List<CartItem> getCartItemByUId(@PathVariable Integer uId) {
+		return service.getCartItemsByUId(uId);
 		
 	}
 	

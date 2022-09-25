@@ -28,20 +28,16 @@ export class CartComponent implements OnInit {
     this.userService.getOneUserById(this.uId).subscribe({
       next:(res) => this.user = res
     })
-    this.cartItemService.getCartItemsByUser(this.user).subscribe({
+    
+  }
+
+  listCartItemsByUId(user:User) {
+    this.cartItemService.getCartItemsByUserId(user).subscribe({
       next:(res) => this.cartItems = res
     })
 
+    console.log(this.cartItems)
   }
-
-
-
-
-
-  // listCartItemsByUId(uId:string) {
-  //   this.cartItemService.getCartItemsByUId(this.uId).subscribe({
-  //     next:(res) => this.cartItems = res
-  //   })
-  // }
+  
 
 }
