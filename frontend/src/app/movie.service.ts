@@ -38,4 +38,8 @@ export class MovieService {
     return this.http.get<Movie[]>(`${this.baseUrl}/all-movies`);
   }
 
+  deleteMovie(uId:string, mId:string) {
+    return this.http.delete(`${this.baseUrl}/user/${uId}/movie/${mId}/movie`);
+  }
+
 }

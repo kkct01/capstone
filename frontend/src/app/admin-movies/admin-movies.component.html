@@ -36,7 +36,7 @@
                     <td>{{movie.price}}</td>
                     <td>{{movie.posterLink}}</td>
                     <td><button class="btn btn-primary" routerLink="/adminUpdateMovie/{{uid}}/movie/{{movie.id}}">Update</button><br>
-                    <button class="btn btn-danger">Remove</button></td>
+                    <button class="btn btn-danger" routerLink="/adminDeleteMovie/user/{{uid}}/movie/{{movie.id}}/delete">Remove</button></td>
                 </tr>
             </tbody>
         </table>

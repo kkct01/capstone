@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <img src="http://localhost:8089/images/{{movie.posterLink}}">
+        </div>
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Opening on
+                        </th>
+                        <th>Ticket Price</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{movie.title}}</td>
+                        <td>{{movie.opening}}</td>
+                        <td>{{movie.price}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br><br><br>
+            <div>
+                <h1 class="text-danger">Warning</h1>
+                <h2>Do you want to remove this movie?</h2>
+                <br><br>
+                <button class="btn btn-primary" (click)="deleteMovie(uId,mId)">Yes, please remove it</button>
+            </div>
+        </div>
+    </div>
+</div>

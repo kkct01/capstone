@@ -1,3 +1,4 @@
+import { AdminDeleteMovieComponent } from './admin-delete-movie/admin-delete-movie.component';
 import { CartComponent } from './cart/cart.component';
 import { UserMovieComponent } from './user-movie/user-movie.component';
 import { UpdateMovieComponent } from './update-movie/update-movie.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'movie/:mId/user/:firstName/:uId', component: UserMovieComponent},
   { path: 'movie/:mId', component: UserMovieComponent},
   { path: 'cart/:uId', component: CartComponent},
+  { path: 'adminDeleteMovie/user/:uId/movie/:mId/delete', component: AdminDeleteMovieComponent, canActivate:[RouteGuardService]},
   { path: '**', component: ErrorComponent}
 ];
 
