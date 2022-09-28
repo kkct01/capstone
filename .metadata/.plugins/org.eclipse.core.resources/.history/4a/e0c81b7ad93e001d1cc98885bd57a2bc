@@ -1,0 +1,22 @@
+package com.movie.backend.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+
+import com.movie.backend.entity.CartItem;
+import com.movie.backend.entity.User;
+
+public interface CartItemRepo extends JpaRepository<CartItem, Integer> {
+
+	List<CartItem> getByUser(User user);
+	
+	@Modifying
+	@Query(value="DELETE FROM cart_items c WHERE c.m_id=:mId", nativeQuery = true)
+	void deleteByMId(Integer mId);
+	
+	
+	
+}

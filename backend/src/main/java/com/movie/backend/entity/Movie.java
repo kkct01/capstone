@@ -34,30 +34,30 @@ public class Movie {
 	@Lob	
 	private String synopsis;
 	private String posterLink;
-	@OneToMany(mappedBy = "movie", orphanRemoval = true, cascade = CascadeType.ALL)
-	private List<CartItem> cartItems;
-		
-	public Movie(Integer id, String title, Date opening, String duration, String language, String director, String cast,
-			Integer price, String synopsis, String posterLink, List<CartItem> cartItems) {
-		super();
-		this.id = id;
-		this.title = title;
-		this.opening = opening;
-		this.duration = duration;
-		this.language = language;
-		this.director = director;
-		this.cast = cast;
-		this.price = price;
-		this.synopsis = synopsis;
-		this.posterLink = posterLink;
-		this.cartItems = cartItems;
-	}
-	public List<CartItem> getCartItems() {
-		return cartItems;
-	}
-	public void setCartItems(List<CartItem> cartItems) {
-		this.cartItems = cartItems;
-	}
+//	@OneToMany(mappedBy = "movie", orphanRemoval = true, cascade = CascadeType.ALL)
+//	private List<CartItem> cartItems;
+//		
+//	public Movie(Integer id, String title, Date opening, String duration, String language, String director, String cast,
+//			Integer price, String synopsis, String posterLink, List<CartItem> cartItems) {
+//		super();
+//		this.id = id;
+//		this.title = title;
+//		this.opening = opening;
+//		this.duration = duration;
+//		this.language = language;
+//		this.director = director;
+//		this.cast = cast;
+//		this.price = price;
+//		this.synopsis = synopsis;
+//		this.posterLink = posterLink;
+//		this.cartItems = cartItems;
+//	}
+//	public List<CartItem> getCartItems() {
+//		return cartItems;
+//	}
+//	public void setCartItems(List<CartItem> cartItems) {
+//		this.cartItems = cartItems;
+//	}
 	public Integer getPrice() {
 		return price;
 	}
