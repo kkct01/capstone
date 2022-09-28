@@ -1,12 +1,9 @@
 import { InteractionService } from './../interaction.service';
 import { UserService } from './../user.service';
-import { Observable, subscribeOn } from 'rxjs';
-import { CartItemService } from './../cart-item.service';
-import { CartItem } from './../cart-item';
 import { AuthenticationService } from './../authentication.service';
 import { MovieService } from './../movie.service';
-import { ActivatedRoute, Params, Router } from '@angular/router';
-import { AfterViewChecked, AfterViewInit, Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { Movie } from '../movie';
 import { User } from '../user';
 
@@ -22,11 +19,11 @@ export class UserMovieComponent implements OnInit {
   username: string = '';
   movie: Movie = new Movie();
   user: User = new User();
-  cartItem: CartItem = new CartItem(this.user, this.movie);
+  
 
   posterBaseUrl = "http://localhost:8089/images"
 
-  constructor(private _interactionService: InteractionService, private userService: UserService, private cartItemService: CartItemService, private activatedRoute: ActivatedRoute, private movieService: MovieService, private router: Router, public auth: AuthenticationService) { }
+  constructor(private _interactionService: InteractionService, private userService: UserService, private activatedRoute: ActivatedRoute, private movieService: MovieService, private router: Router, public auth: AuthenticationService) { }
 
   ngOnInit(): void {
     this.mId = this.activatedRoute.snapshot.params['mId'];
@@ -41,15 +38,7 @@ export class UserMovieComponent implements OnInit {
 
   }
 
-  saveItemToCart(cartItem: CartItem) {
-    this.cartItem.user = this.user;
-    this.cartItem.movie = this.movie;
-    this.cartItemService.saveCartItem(cartItem).subscribe({
-      next: (res) => alert('Item added to cart')
-    })
-
-  }
-
+  
 }
 
 
