@@ -2,10 +2,12 @@ package com.movie.backend.controller;
 
 import java.util.List;
 
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -54,6 +56,11 @@ public class MovieController {
 	public ResponseEntity<Movie> updateMovie(@PathVariable Integer id, @RequestBody Movie movie) {
 		service.addNewMovieService(movie);
 		return ResponseEntity.ok(movie);		
+	}
+	
+	@DeleteMapping("/admin/{uId}/movie/{mId}/delete")
+	public void deleteMovie(@PathVariable Integer uId, @PathVariable Integer mId) {
+		service.deleteMovieService(mId);
 	}
 
 }

@@ -39,7 +39,7 @@ export class MovieService {
   }
 
   deleteMovie(uId:string, mId:string) {
-    return this.http.delete(`${this.baseUrl}/user/${uId}/movie/${mId}/movie`);
+    return this.http.delete(`${this.baseUrl}/admin/${uId}/movie/${mId}/delete`);
   }
 
 }

@@ -1,6 +1,8 @@
 package com.movie.backend.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.ResponseEntity.BodyBuilder;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -39,6 +41,11 @@ public class MovieService {
 		targetedMovie.setPosterLink(movie.getPosterLink());
 		return repo.save(targetedMovie);
 
+	}
+	
+	public void deleteMovieService(Integer mId) {
+		repo.deleteById(mId);
+		
 	}
 
 }

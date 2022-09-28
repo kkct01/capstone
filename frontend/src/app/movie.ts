@@ -1,3 +1,5 @@
+import { CartItem } from "./cart-item";
+
 export class Movie {
 
     id!:string;
@@ -10,5 +12,6 @@ export class Movie {
     synopsis!:string;
     posterLink!:string;
     price!:number;
+   
 
 }
