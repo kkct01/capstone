@@ -24,8 +24,7 @@ public class UserController {
 	@PostMapping("/user")
 	public ResponseEntity<User> addNewUser(@RequestBody User user) {
 		service.addNewUserService(user);
-		return ResponseEntity.ok(user);
-		
+		return ResponseEntity.ok(user);	
 	}
 	
 	@GetMapping("/user/{email}")

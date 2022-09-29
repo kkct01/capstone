@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.ResponseEntity.BodyBuilder;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import com.movie.backend.entity.Movie;
@@ -16,6 +18,18 @@ public class MovieService {
 
 	@Autowired
 	private MovieRepo repo;
+	
+	
+	public List<Movie> getCartMovies(Integer[] mIds) {
+		List<Movie> movies = new ArrayList<>();
+		for(int i=0; i < mIds.length; i++) {
+			Movie movie = new Movie();
+			movie = repo.findById(mIds[i]).orElse(null);
+			movies.add(movie);
+		}
+		return movies;
+		
+	}
 
 	public Movie addNewMovieService(Movie movie) {
 		return repo.save(movie);

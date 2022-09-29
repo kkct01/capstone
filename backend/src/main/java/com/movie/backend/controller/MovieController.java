@@ -27,14 +27,15 @@ public class MovieController {
 	@Autowired
 	private MovieService service;
 	
-	
-	
+	@GetMapping("/cart/user/{uId}/get-cart-items")
+	public List<Movie> getCartMovies(@RequestBody Integer[] mIds, @PathVariable Integer uId) {
+		return service.getCartMovies(mIds);	
+	}
 	
 	@PostMapping("/admin/{id}/add-movie")
 	public ResponseEntity<Movie> addNewMovie(@RequestBody Movie movie, @PathVariable Integer id) {
 		service.addNewMovieService(movie);
-		return ResponseEntity.ok(movie);
-		
+		return ResponseEntity.ok(movie);	
 	}
 	
 	@GetMapping("/admin/{id}/list-movies")
