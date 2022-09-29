@@ -20,6 +20,8 @@ import { AdminAddMovieComponent } from './admin-add-movie/admin-add-movie.compon
 import { UpdateMovieComponent } from './update-movie/update-movie.component';
 import { UserMovieComponent } from './user-movie/user-movie.component';
 import { CartComponent } from './cart/cart.component';
+import { PaymentComponent } from './payment/payment.component';
+import { PaymentSuccessComponent } from './payment-success/payment-success.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { CartComponent } from './cart/cart.component';
     AdminAddMovieComponent,
     UpdateMovieComponent,
     UserMovieComponent,
-    CartComponent
+    CartComponent,
+    PaymentComponent,
+    PaymentSuccessComponent
   ],
   imports: [
     BrowserModule,

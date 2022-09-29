@@ -3,6 +3,7 @@ import { AuthenticationService } from './../authentication.service';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Movie } from '../movie';
+import { InteractionService } from '../interaction.service';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +19,7 @@ export class HomeComponent implements OnInit {
 
   baseUrl = "http://localhost:8089/images"
 
-  constructor(private activatedRoute: ActivatedRoute, public auth:AuthenticationService, private movieService:MovieService) { }
+  constructor(private _interactionService: InteractionService, private activatedRoute: ActivatedRoute, public auth:AuthenticationService, private movieService:MovieService) { }
 
   ngOnInit(): void {
     this.username = this.activatedRoute.snapshot.params['firstName'];
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
     this.movieService.listAllMoviesHome().subscribe({
       next:(res) => this.movies = res
     });
+    this._interactionService.sendUId(this.uId)
   }
 
   

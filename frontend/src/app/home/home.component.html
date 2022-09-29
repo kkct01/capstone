@@ -38,33 +38,21 @@
                 </tr>
 
             </table>
-
         </div>
+
         <div class="col">
-            <table *ngIf="!(auth.isAdminLoggedIn()||auth.isUserLoggedIn())">
-                <tbody>
-                    <tr *ngFor="let movie of movies">
-                        <td>
-                            <a routerLink="/movie/{{movie.id}}">
-                                <img id="thumb" src="{{baseUrl}}/{{movie.posterLink}}">
-                                <p>{{movie.title}}</p>
-                            </a>                            
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table *ngIf="auth.isAdminLoggedIn()||auth.isUserLoggedIn()">
-                <tbody>
-                    <tr *ngFor="let movie of movies">
-                        <td>
-                            <a routerLink="/movie/{{movie.id}}/user/{{username}}/{{uId}}">
-                                <img id="thumb" src="{{baseUrl}}/{{movie.posterLink}}">
-                                <p>{{movie.title}}</p>
-                            </a>                            
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="grid">
+                <div class="grid-item" *ngFor="let movie of movies">
+                    
+                        <a routerLink="/movie/{{movie.id}}">
+                            <img id="thumb" src="{{baseUrl}}/{{movie.posterLink}}">
+                            <p>{{movie.title}}</p>
+                        </a>
+
+                    
+
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -20,4 +20,31 @@ td {
     margin-top: 30px;
   }
 
-  
+  .grid
+ {
+  display: grid;
+  grid-template-columns: repeat(3,150px);  /* 3 columns */
+  grid-template-rows: repeat(3,150px); /* 3 rows  */
+  grid-gap:150px 30px; /* 50 pixels of space added between rows and 30 pixels added between columns  */
+}
+
+.grid-item{
+ 
+  padding:10px;
+}
+/* img {
+  width: 100%;
+} */
+
+
+img {
+  border: 1px solid #ddd; /* Gray border */
+  border-radius: 4px;  /* Rounded border */
+  padding: 5px; /* Some padding */
+  width: 150px; /* Set a small width */
+}
+
+/* Add a hover effect (blue shadow) */
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}

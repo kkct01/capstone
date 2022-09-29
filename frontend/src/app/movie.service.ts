@@ -2,7 +2,6 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Movie } from './movie';
-import { User } from './user';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +12,10 @@ export class MovieService {
 
 
   baseUrl = "http://localhost:8089";
+
+  getCartMovies(mIds:string[], uId:string):Observable<Movie[]> {
+    return this.http.get<Movie[]>(`${this.baseUrl}/cart/user/${uId}/get-cart-items`, {responseType: 'json'})
+  }
 
   listAllMovies(id:string):Observable<Movie[]> {    
     return this.http.get<Movie[]>(`${this.baseUrl}/admin/${id}/list-movies`);

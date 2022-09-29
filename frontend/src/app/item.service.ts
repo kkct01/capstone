@@ -19,5 +19,4 @@ export class ItemService {
   getItems(uId:string):Observable<Item[]>{
     return this.http.get<Item[]>(`${this.baseUrl}/cart/user/${uId}`)
   }
-
 }

@@ -1,3 +1,5 @@
+import { RouteGuardServiceUserService } from './route-guard-service-user.service';
+import { PaymentComponent } from './payment/payment.component';
 import { CartComponent } from './cart/cart.component';
 import { AdminDeleteMovieComponent } from './admin-delete-movie/admin-delete-movie.component';
 import { UserMovieComponent } from './user-movie/user-movie.component';
@@ -17,7 +19,7 @@ import { RouteGuardService } from './route-guard.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'home/:firstName/:uId', component: HomeComponent},
+  { path: 'home/:firstName/:uId', component: HomeComponent, canActivate:[RouteGuardServiceUserService]},
   { path: 'registration', component: RegistrationComponent },
   { path: 'login', component: LoginComponent},
   { path: 'logout', component: LogoutComponent},
@@ -26,10 +28,12 @@ const routes: Routes = [
   { path: 'adminUsers/:id', component: AdminUserComponent, canActivate:[RouteGuardService]},
   { path: 'adminAddMovie/:id', component: AdminAddMovieComponent, canActivate:[RouteGuardService]},
   { path: 'adminUpdateMovie/:uid/movie/:mid', component: UpdateMovieComponent, canActivate:[RouteGuardService]},
-  { path: 'movie/:mId/user/:firstName/:uId', component: UserMovieComponent},
+  { path: 'movie/:mId/user/:firstName/:uId', component: UserMovieComponent, canActivate:[RouteGuardServiceUserService]},
   { path: 'movie/:mId', component: UserMovieComponent},
   { path: 'adminDeleteMovie/user/:uId/movie/:mId/delete', component: AdminDeleteMovieComponent, canActivate:[RouteGuardService]},
-  { path: 'cart/:uId', component: CartComponent },
+  { path: 'cart/:uId', component: CartComponent, canActivate:[RouteGuardServiceUserService] },
+  { path: 'payment/:uId', component: PaymentComponent, canActivate:[RouteGuardServiceUserService]},
+  { path: 'paymentSuccess', component:PaymentComponent, canActivate:[RouteGuardServiceUserService]},
   { path: '**', component: ErrorComponent}
 ];
 
