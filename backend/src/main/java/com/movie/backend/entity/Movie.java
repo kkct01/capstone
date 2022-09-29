@@ -43,12 +43,12 @@ public class Movie {
 	}
 		
 	public Movie() {
-		super();
+		
 	}
 	
 	public Movie(Integer id, String title, Date opening, String duration, String language, String director, String cast,
 			Integer price, String synopsis, String posterLink) {
-		super();
+		
 		this.id = id;
 		this.title = title;
 		this.opening = opening;

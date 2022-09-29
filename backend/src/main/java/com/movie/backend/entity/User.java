@@ -26,11 +26,10 @@ public class User {
 	private boolean enable = true;
 	
 	public User() {
-		super();
-	}
+			}
 	
 	public User(Integer id, String firstName, String lastName, String email, String password, boolean enable) {
-		super();
+		
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;

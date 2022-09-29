@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.movie.backend.entity.Item;
 import com.movie.backend.entity.Movie;
 import com.movie.backend.repository.MovieRepo;
 import com.movie.backend.service.MovieService;
@@ -26,8 +27,8 @@ public class MovieController {
 	@Autowired
 	private MovieService service;
 	
-	@Autowired
-	private MovieRepo repo; 
+	
+	
 	
 	@PostMapping("/admin/{id}/add-movie")
 	public ResponseEntity<Movie> addNewMovie(@RequestBody Movie movie, @PathVariable Integer id) {

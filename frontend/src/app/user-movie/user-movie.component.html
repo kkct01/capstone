@@ -45,7 +45,7 @@
                     <h4>Synopsis</h4>
                 </label>
                 <p id="story">{{movie.synopsis}}</p>
-                <button class="btn btn-info" *ngIf="auth.isUserLoggedIn()">Add to cart</button>
+                <button class="btn btn-info" *ngIf="auth.isUserLoggedIn()" (click)="saveItem(uId, mId)">Add to cart</button>
                 <button class="btn btn-primary" routerLink="">Back</button>
             </div>
         </div>

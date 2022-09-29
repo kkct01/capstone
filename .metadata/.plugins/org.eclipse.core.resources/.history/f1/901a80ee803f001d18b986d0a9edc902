@@ -1,0 +1,19 @@
+package com.movie.backend.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.movie.backend.entity.Item;
+import com.movie.backend.repository.ItemRepo;
+
+@Service
+public class ItemService {
+	
+	@Autowired
+	private ItemRepo repo;
+	
+	public Item saveItem(Item item) {
+		return repo.save(item);	
+	}
+
+}
